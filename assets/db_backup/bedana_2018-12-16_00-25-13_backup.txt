@@ -1,0 +1,1241 @@
+SET foreign_key_checks = 0;
+#
+# TABLE STRUCTURE FOR: mp_langingpage
+#
+
+DROP TABLE IF EXISTS `mp_langingpage`;
+
+CREATE TABLE `mp_langingpage` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `companyname` varchar(255) NOT NULL,
+  `companydescription` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `banner` varchar(255) NOT NULL,
+  `currency` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `language` varchar(50) NOT NULL,
+  `primarycolor` varchar(50) NOT NULL,
+  `theme_pri_hover` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `startday` int(2) NOT NULL,
+  `startmonth` int(2) NOT NULL,
+  `endday` int(2) NOT NULL,
+  `endmonth` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_langingpage` (`id`, `companyname`, `companydescription`, `logo`, `banner`, `currency`, `language`, `primarycolor`, `theme_pri_hover`, `email`, `contact`, `address`, `startday`, `startmonth`, `endday`, `endmonth`) VALUES ('1', 'Bedana | The accounting  hero.', 'The accounting software for small business.', '3a4b9900f78c977ca71e8421e9bce646.png', 'a102f001cc3e4550268118467998a4db.png', 'PKR', 'EN', 'rgba(159,12,255,0.89)', '#4e08c9', 'info@gigabyteltd.net', '03472394224', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '1', '1', '30', '12');
+
+
+#
+# TABLE STRUCTURE FOR: mp_head
+#
+
+DROP TABLE IF EXISTS `mp_head`;
+
+CREATE TABLE `mp_head` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `nature` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `relation_id` int(11) NOT NULL,
+  `expense_type` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('1', 'Salary', 'Expense', 'Current', '0', 'Cash Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('2', 'Cash', 'Assets', 'Non-Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('3', 'Inventory', 'Assets', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('4', 'Accounts receivable', 'Assets', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('5', 'Accounts payable', 'Libility', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('6', 'Telephone Expense', 'Expense', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('7', 'CapitalStock', 'Equity', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('8', 'Land', 'Assets', 'Non-Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('9', 'Building', 'Assets', 'Non-Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('10', 'Notes payable', 'Libility', 'Non-Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('11', 'Tools and Equipments', 'Assets', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('12', 'Repair Service Revenue', 'Revenue', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('13', 'Wages Expense', 'Expense', 'Current', '0', 'Cash Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('14', 'Utitlity Expense', 'Expense', 'Current', '0', 'Cash Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('15', 'Adverstising Expense', 'Expense', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('16', 'Cash in bank', 'Assets', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('17', 'Service revenue', 'Revenue', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('18', 'Sales', 'Revenue', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('19', 'Capital Expenditure', 'Assets', 'Non-Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('20', 'Bad Debit', 'Expense', 'Current', '0', 'Cash Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('21', 'Bad Debit Expense', 'Expense', 'Non-Current', '0', 'Non-Cash Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('22', 'Collection fee', 'Expense', 'Current', '0', 'Bank Expense');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('23', 'Advance to vendor', 'Assets', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('24', 'Advance from customer', 'Libility', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('25', 'Tax Payable', 'Libility', 'Current', '0', '-');
+INSERT INTO `mp_head` (`id`, `name`, `nature`, `type`, `relation_id`, `expense_type`) VALUES ('26', 'Cost of goods sold ', 'Expense', 'Current', '0', 'Goods Expense');
+
+
+#
+# TABLE STRUCTURE FOR: mp_generalentry
+#
+
+DROP TABLE IF EXISTS `mp_generalentry`;
+
+CREATE TABLE `mp_generalentry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `naration` varchar(255) NOT NULL,
+  `generated_source` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('1', '2018-12-14', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('2', '2018-12-14', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('3', '2018-12-14', '', 'invoice');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('4', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('5', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('6', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('7', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('8', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('9', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('10', '2018-12-14', '', 'invoice');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('11', '2018-12-14', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('12', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('13', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('14', '2018-12-14', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('17', '2018-12-15', 'Now that we know who you are, I know who I am. I’m not a mistake! It all makes sense! In a comic.', 'deposit');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('18', '2018-12-15', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('19', '2018-12-15', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('21', '2018-12-15', '', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('22', '2018-12-15', '', 'refund_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('23', '2018-12-15', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('24', '2018-12-15', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('25', '2018-12-15', '', 'purchase_return');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('26', '2018-12-15', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('27', '2018-12-15', '', 'purchase_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('28', '2018-12-15', '', 'purchase_return');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('29', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('30', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('31', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('32', '2018-12-15', '', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('33', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('34', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('35', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('36', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('37', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('38', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('39', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('42', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('43', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('44', '2018-12-15', '', 'invoice');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('45', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('46', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('47', '2018-12-15', 'Here does memo', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('48', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('49', '2018-12-15', 'descrition', 'deposit');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('50', '2018-12-15', 'descrition', 'cheque');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('51', '2018-12-15', 'descrition', 'bank_collection');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('52', '2018-12-15', 'Here does memo', 'invoice');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('53', '2018-12-15', '', 'sales_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('54', '2018-12-15', 'Here does memo', 'refund_receipt');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('55', '2018-12-15', 'Here does memo', 'credit_note');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('56', '2018-12-15', '', 'invoice');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('57', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('58', '2018-12-15', '', 'received_payments');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('59', '2018-12-15', '', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('60', '2018-12-15', 'Here does memo', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('61', '2018-12-15', '', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('62', '2018-12-15', '', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('63', '2018-12-15', 'Message displayed on statement :', 'expense');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('64', '2018-12-15', 'descrition', 'journal_voucher');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('65', '2018-12-15', 'Now that we know who you are, I know who I am. I’m not a mistake! It all makes sense! In a comic.', 'debit_voucher');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('66', '2018-12-15', 'Now that we know who you are, I know who I am. I’m not a mistake! It all makes sense! In a comic.', 'credit_voucher');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('68', '2018-12-15', '', 'debit_voucher');
+INSERT INTO `mp_generalentry` (`id`, `date`, `naration`, `generated_source`) VALUES ('69', '2018-12-15', '', 'expense');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sub_entry
+#
+
+DROP TABLE IF EXISTS `mp_sub_entry`;
+
+CREATE TABLE `mp_sub_entry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) NOT NULL,
+  `accounthead` int(11) NOT NULL,
+  `amount` decimal(11,2) NOT NULL,
+  `type` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `sid` (`parent_id`),
+  KEY `accounthead` (`accounthead`),
+  KEY `amount` (`amount`)
+) ENGINE=InnoDB AUTO_INCREMENT=230 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('1', '1', '3', '1000.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('2', '1', '2', '0.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('3', '1', '5', '1000.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('4', '2', '3', '1500.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('5', '2', '2', '1000.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('6', '2', '5', '500.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('7', '3', '4', '1500.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('8', '3', '26', '500.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('9', '3', '18', '1500.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('10', '3', '3', '500.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('16', '5', '2', '200.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('17', '5', '26', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('18', '5', '18', '200.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('19', '5', '3', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('20', '6', '2', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('21', '6', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('22', '6', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('23', '6', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('24', '7', '2', '200.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('25', '7', '26', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('26', '7', '18', '200.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('27', '7', '3', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('28', '8', '2', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('29', '8', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('30', '8', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('31', '8', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('32', '9', '2', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('33', '9', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('34', '9', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('35', '9', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('36', '10', '4', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('37', '10', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('38', '10', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('39', '10', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('40', '11', '3', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('41', '11', '2', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('42', '12', '2', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('43', '12', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('44', '12', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('45', '12', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('46', '13', '2', '45.45', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('47', '13', '18', '45.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('48', '13', '25', '0.45', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('49', '14', '2', '200.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('50', '14', '26', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('51', '14', '18', '200.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('52', '14', '3', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('59', '17', '16', '1000.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('60', '17', '4', '1000.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('61', '18', '16', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('62', '18', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('63', '18', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('64', '18', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('65', '19', '16', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('66', '19', '18', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('69', '21', '15', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('70', '21', '16', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('75', '22', '18', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('76', '22', '3', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('77', '22', '26', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('78', '22', '16', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('79', '23', '3', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('80', '23', '16', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('83', '24', '3', '16.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('84', '24', '16', '16.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('85', '25', '16', '16.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('86', '25', '3', '16.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('87', '26', '16', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('88', '26', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('89', '26', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('90', '26', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('95', '29', '16', '4.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('96', '29', '4', '4.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('97', '30', '16', '4.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('98', '30', '4', '4.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('99', '31', '1', '6.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('100', '31', '16', '6.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('101', '32', '22', '6.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('102', '32', '16', '6.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('103', '33', '1', '10.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('104', '33', '16', '10.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('105', '34', '1', '15.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('106', '34', '16', '15.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('107', '35', '1', '45.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('108', '35', '16', '45.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('111', '36', '16', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('112', '36', '4', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('113', '37', '16', '5.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('114', '37', '4', '5.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('115', '38', '16', '47.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('116', '38', '4', '47.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('117', '39', '1', '10.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('118', '39', '16', '10.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('123', '42', '16', '1500.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('124', '42', '4', '1500.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('125', '43', '16', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('126', '43', '4', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('127', '44', '4', '200.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('128', '44', '26', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('129', '44', '18', '200.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('130', '44', '3', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('131', '45', '16', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('132', '45', '4', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('133', '46', '16', '38.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('134', '46', '4', '38.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('137', '48', '2', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('138', '48', '4', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('141', '49', '16', '1200.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('142', '49', '4', '1200.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('145', '50', '1', '23.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('146', '50', '16', '23.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('147', '51', '16', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('148', '51', '4', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('151', '52', '4', '100.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('152', '52', '18', '100.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('156', '53', '2', '45.90', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('157', '53', '17', '45.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('158', '53', '25', '0.90', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('159', '4', '2', '1000.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('160', '4', '4', '1000.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('161', '4', '26', '500.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('162', '4', '18', '2000.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('163', '4', '3', '500.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('170', '54', '18', '65.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('171', '54', '2', '65.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('178', '55', '18', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('179', '55', '4', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('180', '27', '3', '30.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('181', '27', '16', '30.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('184', '28', '16', '150.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('185', '28', '3', '150.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('186', '56', '4', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('187', '56', '26', '8.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('188', '56', '18', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('189', '56', '3', '8.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('190', '57', '2', '5.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('191', '57', '4', '5.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('192', '58', '2', '7.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('193', '58', '4', '7.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('196', '59', '13', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('197', '59', '2', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('200', '47', '22', '50.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('201', '47', '16', '50.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('202', '60', '22', '12.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('203', '60', '16', '12.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('204', '61', '22', '5.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('205', '61', '16', '5.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('208', '62', '22', '5.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('209', '62', '16', '5.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('212', '63', '22', '2.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('213', '63', '16', '2.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('216', '64', '2', '15.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('217', '64', '4', '0.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('218', '65', '10', '10.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('219', '65', '2', '10.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('220', '66', '2', '5.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('221', '66', '4', '5.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('226', '68', '4', '1.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('227', '68', '2', '1.00', '1');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('228', '69', '14', '10.00', '0');
+INSERT INTO `mp_sub_entry` (`id`, `parent_id`, `accounthead`, `amount`, `type`) VALUES ('229', '69', '2', '10.00', '1');
+
+
+#
+# TABLE STRUCTURE FOR: mp_product
+#
+
+DROP TABLE IF EXISTS `mp_product`;
+
+CREATE TABLE `mp_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `cost` decimal(11,2) NOT NULL,
+  `sale_tax` decimal(11,2) NOT NULL,
+  `head_id` int(11) NOT NULL,
+  `type` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `head_id` (`head_id`),
+  CONSTRAINT `product_head_fk` FOREIGN KEY (`head_id`) REFERENCES `mp_head` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('1', 'Domain .PK ', 'descrition', '45.00', '0.00', '2.00', '17', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('2', 'Service Charges', 'here  goes description of payment voucher ', '50.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('3', 'Software Charges', 'here  goes description of payment voucher ', '65.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('4', 'Testing & Visit', 'descrition', '78.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('5', 'Domain .PK ', 'descrition', '45.00', '0.00', '1.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('6', 'Domain .PK ', 'descrition', '15.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('7', 'Domain .PK ', 'descrition', '45.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('8', 'Domain .PK ', 'descrition', '45.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('9', 'Domain .PK ', 'descrition', '45.00', '0.00', '0.00', '18', '0');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('10', 'Lipstick', 'descrition', '12.00', '8.00', '0.00', '18', '1');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('11', 'Havoc Perfume', 'Havoc Perfume 100ml', '200.00', '100.00', '0.00', '18', '1');
+INSERT INTO `mp_product` (`id`, `product_name`, `description`, `price`, `cost`, `sale_tax`, `head_id`, `type`) VALUES ('12', '', '', '0.00', '0.00', '0.00', '18', '0');
+
+
+#
+# TABLE STRUCTURE FOR: mp_banks
+#
+
+DROP TABLE IF EXISTS `mp_banks`;
+
+CREATE TABLE `mp_banks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bankname` varchar(255) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `branchcode` varchar(100) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `accountno` varchar(100) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_banks` (`id`, `bankname`, `branch`, `branchcode`, `title`, `accountno`, `status`) VALUES ('1', 'Standard Chartered Bank', 'Hill Park Branch', '0051', 'MUHAMMAD IBRAHIM', '02051305322', '0');
+INSERT INTO `mp_banks` (`id`, `bankname`, `branch`, `branchcode`, `title`, `accountno`, `status`) VALUES ('2', 'Soneri Bank Pvt Ltd', 'Suparco branch', '0032', 'Noor sons', '020513302522', '0');
+
+
+#
+# TABLE STRUCTURE FOR: mp_bank_opening
+#
+
+DROP TABLE IF EXISTS `mp_bank_opening`;
+
+CREATE TABLE `mp_bank_opening` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_created` date NOT NULL,
+  `bank_id` int(11) NOT NULL,
+  `amount` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `bank_id` (`bank_id`),
+  CONSTRAINT `bank_opening_transac` FOREIGN KEY (`bank_id`) REFERENCES `mp_banks` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: mp_bank_transaction
+#
+
+DROP TABLE IF EXISTS `mp_bank_transaction`;
+
+CREATE TABLE `mp_bank_transaction` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `bank_id` int(11) NOT NULL,
+  `method` varchar(50) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `ref_no` varchar(100) NOT NULL,
+  `transaction_status` int(1) NOT NULL,
+  `transaction_type` varchar(50) NOT NULL,
+  `cleared_date` date NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`),
+  KEY `bank_id` (`bank_id`),
+  CONSTRAINT `bankid_bank_fk` FOREIGN KEY (`bank_id`) REFERENCES `mp_banks` (`id`),
+  CONSTRAINT `transaction_general_fk` FOREIGN KEY (`transaction_id`) REFERENCES `mp_generalentry` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('1', '17', '1', 'Cash', '1000.00', '0.00', '', '0', 'recieved', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('2', '18', '1', 'Cheque', '12.00', '12.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('3', '19', '1', 'Cheque', '50.00', '50.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('5', '21', '1', 'Cheque', '50.00', '50.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('7', '22', '1', 'Cheque', '50.00', '50.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('8', '23', '1', 'Cheque', '8.00', '8.00', '', '1', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('10', '24', '1', 'Cheque', '16.00', '16.00', '', '1', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('11', '25', '1', 'Cheque', '16.00', '16.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('12', '26', '1', 'Cheque', '12.00', '12.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('15', '29', '1', 'Collection', '4.00', '0.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('16', '30', '1', 'Collection', '4.00', '0.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('17', '31', '1', 'Cheque', '0.00', '6.00', '', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('18', '32', '1', 'Cash', '6.00', '6.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('19', '33', '1', 'Cheque', '0.00', '10.00', '', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('20', '34', '1', 'Cheque', '15.00', '15.00', '', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('21', '35', '1', 'Cheque', '45.00', '45.00', 'DFD333', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('22', '36', '1', 'Collection', '50.00', '50.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('23', '37', '1', 'Collection', '5.00', '5.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('24', '38', '1', 'Collection', '47.00', '47.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('25', '39', '1', 'Cheque', '10.00', '10.00', '', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('26', '42', '1', 'Cheque', '1500.00', '1500.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('27', '43', '1', 'Cheque', '12.00', '12.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('28', '45', '1', 'Cheque', '50.00', '50.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('29', '46', '1', 'Cheque', '38.00', '38.00', '', '0', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('31', '49', '2', 'Cash', '1200.00', '0.00', '', '0', 'recieved', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('32', '50', '2', 'Cheque', '23.00', '23.00', '', '0', 'paid', '2018-12-15', 'default.jpg');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('33', '51', '2', 'Collection', '50.00', '50.00', '', '0', 'bank_collection', '2018-12-15', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('34', '27', '1', 'Cheque', '30.00', '30.00', '', '1', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('36', '28', '1', 'Cheque', '150.00', '150.00', '', '1', 'recieved', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('38', '47', '1', 'Cash', '50.00', '50.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('39', '60', '1', 'Cash', '12.00', '12.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('40', '61', '1', 'Cash', '5.00', '5.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('42', '62', '2', 'Cash', '5.00', '5.00', '', '0', 'paid', '0000-00-00', '');
+INSERT INTO `mp_bank_transaction` (`id`, `transaction_id`, `bank_id`, `method`, `total_bill`, `total_paid`, `ref_no`, `transaction_status`, `transaction_type`, `cleared_date`, `attachment`) VALUES ('44', '63', '1', 'Cash', '2.00', '2.00', '', '0', 'paid', '0000-00-00', '');
+
+
+#
+# TABLE STRUCTURE FOR: mp_bank_transaction_payee
+#
+
+DROP TABLE IF EXISTS `mp_bank_transaction_payee`;
+
+CREATE TABLE `mp_bank_transaction_payee` (
+  `tran_id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  PRIMARY KEY (`tran_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('1', '17', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('2', '18', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('3', '19', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('4', '21', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('5', '21', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('6', '22', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('7', '22', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('8', '23', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('10', '24', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('11', '25', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('12', '26', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('15', '29', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('16', '30', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('17', '31', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('18', '32', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('19', '33', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('20', '34', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('21', '35', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('22', '36', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('23', '37', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('24', '38', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('25', '39', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('26', '42', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('27', '43', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('28', '45', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('29', '46', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('31', '49', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('32', '50', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('33', '51', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('34', '27', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('36', '28', '1');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('38', '47', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('39', '60', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('40', '61', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('42', '62', '6');
+INSERT INTO `mp_bank_transaction_payee` (`tran_id`, `transaction_id`, `payee_id`) VALUES ('44', '63', '6');
+
+
+#
+# TABLE STRUCTURE FOR: mp_credit_note
+#
+
+DROP TABLE IF EXISTS `mp_credit_note`;
+
+CREATE TABLE `mp_credit_note` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `billing` varchar(255) NOT NULL,
+  `credit_date` date NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_credit_note` (`id`, `transaction_id`, `payee_id`, `billing`, `credit_date`, `message`, `memo`, `total_bill`, `total_paid`, `user`, `attachment`) VALUES ('1', '55', '1', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '2018-12-15', 'Message displayed on invoice :', 'Here does memo', '50.00', '0.00', 'Bedana', 'efdbba78f4673078db05d82b20d5df34.png');
+
+
+#
+# TABLE STRUCTURE FOR: mp_credit_sales
+#
+
+DROP TABLE IF EXISTS `mp_credit_sales`;
+
+CREATE TABLE `mp_credit_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `credit_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`credit_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_credit_sales` (`id`, `credit_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('4', '1', '2', 'here  goes description of payment voucher ', '1', '50.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_estimate
+#
+
+DROP TABLE IF EXISTS `mp_estimate`;
+
+CREATE TABLE `mp_estimate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `total_bill` decimal(11,2) NOT NULL,
+  `date` date NOT NULL,
+  `expire_date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `memo` longtext NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `billing` varchar(255) NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `payee_id` (`payee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_estimate` (`id`, `total_bill`, `date`, `expire_date`, `user`, `memo`, `payee_id`, `billing`, `invoicemessage`, `status`) VALUES ('1', '100.00', '2018-12-15', '2018-12-15', 'Bedana', 'Here does memo', '1', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', 'Message displayed on invoice :', '2');
+
+
+#
+# TABLE STRUCTURE FOR: mp_estimate_sales
+#
+
+DROP TABLE IF EXISTS `mp_estimate_sales`;
+
+CREATE TABLE `mp_estimate_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `estimate_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`estimate_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_estimate_sales` (`id`, `estimate_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('3', '1', '11', 'Havoc Perfume 100ml', '1', '100.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_expense
+#
+
+DROP TABLE IF EXISTS `mp_expense`;
+
+CREATE TABLE `mp_expense` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `method` varchar(50) NOT NULL,
+  `description` longtext NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `ref_no` varchar(50) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`),
+  KEY `payee_id` (`payee_id`),
+  CONSTRAINT `general_expense_fk` FOREIGN KEY (`transaction_id`) REFERENCES `mp_generalentry` (`id`),
+  CONSTRAINT `payee_expense_fk` FOREIGN KEY (`payee_id`) REFERENCES `mp_payee` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('1', '21', '50.00', '50.00', '2018-12-15', 'Bedana', 'Cheque', '', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('2', '32', '6.00', '0.00', '2018-12-15', 'Bedana', '', '', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('3', '47', '50.00', '0.00', '2018-12-15', 'Bedana', '', 'Here does memo', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('4', '59', '12.00', '12.00', '2018-12-15', 'Bedana', 'Cash', '', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('5', '60', '12.00', '0.00', '2018-12-15', 'Bedana', '', 'Here does memo', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('6', '61', '5.00', '0.00', '2018-12-15', 'Bedana', '', '', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('7', '62', '5.00', '0.00', '2018-12-15', 'Bedana', '', '', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('8', '63', '2.00', '0.00', '2018-12-15', 'Bedana', '', 'Message displayed on statement :', '6', '', 'default.jpg');
+INSERT INTO `mp_expense` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `method`, `description`, `payee_id`, `ref_no`, `attachment`) VALUES ('9', '69', '10.00', '10.00', '2018-12-15', 'Bedana', 'Cash', '', '6', '', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_invoices
+#
+
+DROP TABLE IF EXISTS `mp_invoices`;
+
+CREATE TABLE `mp_invoices` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `description` longtext NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `billing` varchar(255) NOT NULL,
+  `due_date` date NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`),
+  KEY `payee_id` (`payee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_invoices` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `description`, `payee_id`, `billing`, `due_date`, `invoicemessage`, `status`, `attachment`) VALUES ('1', '3', '1500.00', '1500.00', '2018-12-14', 'Bedana', '', '6', '', '2018-12-14', '', '2', 'default.jpg');
+INSERT INTO `mp_invoices` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `description`, `payee_id`, `billing`, `due_date`, `invoicemessage`, `status`, `attachment`) VALUES ('2', '10', '12.00', '12.00', '2018-12-14', 'Bedana', '', '1', '', '2018-12-14', '', '2', 'default.jpg');
+INSERT INTO `mp_invoices` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `description`, `payee_id`, `billing`, `due_date`, `invoicemessage`, `status`, `attachment`) VALUES ('3', '44', '200.00', '188.00', '2018-12-15', 'Bedana', '', '1', '', '2018-12-15', '', '1', 'default.jpg');
+INSERT INTO `mp_invoices` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `description`, `payee_id`, `billing`, `due_date`, `invoicemessage`, `status`, `attachment`) VALUES ('4', '52', '100.00', '0.00', '2018-12-15', 'Bedana', 'Here does memo', '1', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '2018-12-15', 'Message displayed on invoice :', '0', 'default.jpg');
+INSERT INTO `mp_invoices` (`id`, `transaction_id`, `total_bill`, `total_paid`, `date`, `user`, `description`, `payee_id`, `billing`, `due_date`, `invoicemessage`, `status`, `attachment`) VALUES ('5', '56', '12.00', '12.00', '2018-12-15', 'Bedana', '', '1', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '2018-12-15', '', '2', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_menu
+#
+
+DROP TABLE IF EXISTS `mp_menu`;
+
+CREATE TABLE `mp_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `icon` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('2', 'Settings', 'fa fa-cog');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('12', 'Roles', 'fa fa-users');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('18', 'Bank', 'fa fa-bank');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('20', 'Create', 'fa fa-plus-circle');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('23', 'Account', 'fa fa-calculator');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('24', 'Statements', 'fa fa-line-chart');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('26', 'Dashboard', 'fa fa-dashboard');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('28', 'Users', 'fa fa-user-circle-o');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('34', 'Product & Service', 'fa fa-cubes');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('35', 'Expense', 'fa fa-table');
+INSERT INTO `mp_menu` (`id`, `name`, `icon`) VALUES ('36', 'Vouchers', 'fa fa-newspaper-o');
+
+
+#
+# TABLE STRUCTURE FOR: mp_menulist
+#
+
+DROP TABLE IF EXISTS `mp_menulist`;
+
+CREATE TABLE `mp_menulist` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `menu_id` (`menu_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('3', '2', 'Layout & System', 'layout');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('16', '7', 'Personal', 'profile');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('17', '28', 'Users', 'users');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('26', '12', 'Multiple Roles', 'multiple_roles');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('29', '35', 'Expense', 'Expense');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('30', '18', 'Cheques', 'bank/written_cheque');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('31', '18', 'Banks', 'bank');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('55', '23', 'Account holders ', 'payee');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('58', '23', 'Chart of accounts', 'accounts');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('59', '24', 'General Journal', 'statements');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('60', '24', 'Ledger Account', 'statements/ledger_accounts');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('61', '24', 'Trail Balance', 'statements/trail_balance');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('62', '24', 'Income', 'statements/income_statement');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('63', '24', 'Balance Sheet', 'statements/balancesheet');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('64', '36', 'Journal Voucher', 'vouchers/journal_list');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('65', '23', 'Opening Balance', 'vouchers');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('68', '2', 'Take Backup', 'backup');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('69', '2', 'Restore Backup', 'backup/upload_restore');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('70', '18', 'Bank Deposits', 'bank/deposit_list');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('71', '18', 'Bank Book', 'bank/bank_book');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('72', '26', 'Dashboard', 'homepage');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('76', '34', 'Product & Services', 'product');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('78', '20', 'Invoice', 'invoice');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('79', '20', 'Sales', 'sales');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('81', '20', 'Estimate', 'estimate');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('82', '20', 'Refund Receipt', 'refund_receipt');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('83', '20', 'Credit note', 'credit_note');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('84', '36', 'Debit Voucher', 'vouchers/payments');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('85', '24', 'Bank reconciliation', 'Statements/bank_reconciliation');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('86', '35', 'Bank Expense', 'expense/bank_expense');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('87', '18', 'Bank Collection', 'Bank/payment_collection');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('88', '20', 'Purchase', 'purchase');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('89', '20', 'Purchase return', 'purchase_return');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('90', '36', 'Credit Voucher', 'vouchers/credit_vouchers');
+INSERT INTO `mp_menulist` (`id`, `menu_id`, `title`, `link`) VALUES ('91', '23', 'Recieved Payments', 'payee/payment_list');
+
+
+#
+# TABLE STRUCTURE FOR: mp_multipleroles
+#
+
+DROP TABLE IF EXISTS `mp_multipleroles`;
+
+CREATE TABLE `mp_multipleroles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `menu_Id` int(11) NOT NULL,
+  `role` int(1) NOT NULL,
+  `agentid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `menu_Id` (`menu_Id`),
+  KEY `agentid` (`agentid`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('36', '30', '6', '1', '24');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('37', '30', '1', '1', '24');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('39', '30', '5', '1', '24');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('48', '30', '3', '1', '24');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('54', '30', '21', '1', '30');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('55', '30', '22', '1', '30');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('60', '32', '1', '1', '30');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('61', '32', '26', '1', '30');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('70', '35', '7', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('71', '35', '16', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('76', '35', '25', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('78', '35', '27', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('80', '35', '29', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('81', '35', '30', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('82', '35', '31', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('83', '35', '32', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('84', '35', '33', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('88', '35', '37', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('89', '35', '38', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('93', '36', '26', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('94', '36', '20', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('95', '36', '35', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('96', '36', '36', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('97', '36', '34', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('98', '36', '18', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('99', '36', '23', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('100', '36', '24', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('101', '36', '12', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('102', '36', '28', '1', '35');
+INSERT INTO `mp_multipleroles` (`id`, `user_id`, `menu_Id`, `role`, `agentid`) VALUES ('103', '36', '2', '1', '35');
+
+
+#
+# TABLE STRUCTURE FOR: mp_payee
+#
+
+DROP TABLE IF EXISTS `mp_payee`;
+
+CREATE TABLE `mp_payee` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `customer_name` varchar(50) NOT NULL,
+  `cus_email` varchar(50) NOT NULL,
+  `cus_password` varchar(255) NOT NULL,
+  `cus_address` varchar(255) NOT NULL,
+  `cus_contact_1` varchar(50) NOT NULL,
+  `cus_contact_2` varchar(50) NOT NULL,
+  `cus_company` varchar(50) NOT NULL,
+  `cus_description` varchar(100) NOT NULL,
+  `cus_picture` varchar(100) NOT NULL,
+  `cus_status` int(1) NOT NULL,
+  `cus_region` varchar(255) NOT NULL,
+  `cus_town` varchar(255) NOT NULL,
+  `cus_balance` decimal(11,2) NOT NULL,
+  `cus_date` date NOT NULL,
+  `customer_nationalid` varchar(255) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('1', 'Muhammad Ibrahim', 'holder@gmail.com', '', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '03472394224', '03472394224', 'Agha Khan', 'Any Description', 'default.jpg', '0', 'Sindh', 'KARACHI', '0.00', '2018-12-15', '4220118099707', '');
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('2', 'Nestle Pakistan', 'leofriend4all@yahoo.com', '', 'asdasdasd', '03472394224', '', 'asdasd', '', 'default.jpg', '0', 'Sindh', 'karachi', '0.00', '2018-11-10', '', '');
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('3', 'Bank', '', '', '', '', '', '', '', 'default.jpg', '0', '', '', '0.00', '2018-11-23', '', '');
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('4', 'Muhamamad Ali', 'ali@gmal.com', '', '', '', '', '', '', 'default.jpg', '0', '', '', '0.00', '2018-11-25', '', '');
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('5', 'Tanseer Khan', 'tanseer@gmail.com', '', '', '', '', '', '', 'default.jpg', '0', '', '', '0.00', '2018-12-10', '4220', '');
+INSERT INTO `mp_payee` (`id`, `customer_name`, `cus_email`, `cus_password`, `cus_address`, `cus_contact_1`, `cus_contact_2`, `cus_company`, `cus_description`, `cus_picture`, `cus_status`, `cus_region`, `cus_town`, `cus_balance`, `cus_date`, `customer_nationalid`, `type`) VALUES ('6', 'Umar Nawaz', 'umar.n777@gmail.com', '', 'muhammad pura street no 6 house no p 38', '03217277787', '', '', '', 'default.jpg', '0', 'Pakistan — Punjab', 'Faisalabad', '0.00', '2018-12-14', '', '');
+
+
+#
+# TABLE STRUCTURE FOR: mp_payee_payments
+#
+
+DROP TABLE IF EXISTS `mp_payee_payments`;
+
+CREATE TABLE `mp_payee_payments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `agentname` varchar(50) NOT NULL,
+  `mode` varchar(50) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `invoice_id` int(11) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`),
+  KEY `supplier_id` (`payee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('3', '42', '6', '0.00', '1500.00', 'Cheque', '2018-12-15', '', 'Bedana', 'received', '', '1', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('4', '43', '1', '0.00', '12.00', 'Cheque', '2018-12-15', '', 'Bedana', 'received', '', '2', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('5', '45', '1', '0.00', '50.00', 'Cheque', '2018-12-15', '', 'Bedana', 'received', '', '3', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('6', '46', '1', '0.00', '38.00', 'Cheque', '2018-12-15', '', 'Bedana', 'received', '', '3', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('7', '48', '1', '0.00', '100.00', 'Cash', '2018-12-15', '', 'Bedana', 'received', '', '3', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('8', '57', '1', '0.00', '5.00', 'Cash', '2018-12-15', '', 'Bedana', 'received', '', '5', '');
+INSERT INTO `mp_payee_payments` (`id`, `transaction_id`, `payee_id`, `total_bill`, `total_paid`, `method`, `date`, `description`, `agentname`, `mode`, `ref_no`, `invoice_id`, `attachment`) VALUES ('9', '58', '1', '0.00', '7.00', 'Cash', '2018-12-15', '', 'Bedana', 'received', '', '5', '');
+
+
+#
+# TABLE STRUCTURE FOR: mp_payment_voucher
+#
+
+DROP TABLE IF EXISTS `mp_payment_voucher`;
+
+CREATE TABLE `mp_payment_voucher` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `receipt_date` date NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `type` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_payment_voucher` (`id`, `transaction_id`, `payee_id`, `receipt_date`, `memo`, `total_bill`, `total_paid`, `user`, `type`) VALUES ('2', '64', '6', '2018-12-15', 'descrition', '15.00', '0.00', '', '2');
+INSERT INTO `mp_payment_voucher` (`id`, `transaction_id`, `payee_id`, `receipt_date`, `memo`, `total_bill`, `total_paid`, `user`, `type`) VALUES ('3', '65', '6', '2018-12-15', 'Now that we know who you are, I know who I am. I’m not a mistake! It all makes sense! In a comic.', '0.00', '10.00', '', '0');
+INSERT INTO `mp_payment_voucher` (`id`, `transaction_id`, `payee_id`, `receipt_date`, `memo`, `total_bill`, `total_paid`, `user`, `type`) VALUES ('4', '66', '6', '2018-12-15', 'Now that we know who you are, I know who I am. I’m not a mistake! It all makes sense! In a comic.', '0.00', '5.00', '', '1');
+INSERT INTO `mp_payment_voucher` (`id`, `transaction_id`, `payee_id`, `receipt_date`, `memo`, `total_bill`, `total_paid`, `user`, `type`) VALUES ('5', '68', '6', '2018-12-15', '', '0.00', '1.00', '', '0');
+
+
+#
+# TABLE STRUCTURE FOR: mp_purchasereturn_receipt
+#
+
+DROP TABLE IF EXISTS `mp_purchasereturn_receipt`;
+
+CREATE TABLE `mp_purchasereturn_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `billing_address` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+#
+# TABLE STRUCTURE FOR: mp_purchase_receipt
+#
+
+DROP TABLE IF EXISTS `mp_purchase_receipt`;
+
+CREATE TABLE `mp_purchase_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `billing_address` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('1', '1', '2018-12-01', 'Bedana', '6', 'Cash', '', 'muhammad pura street no 6 house no p 38', '1000.00', '0.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('2', '2', '2018-12-02', 'Bedana', '6', 'Cash', '', '', '1500.00', '1000.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('3', '11', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '8.00', '8.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('4', '23', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '8.00', '8.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('5', '24', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '16.00', '16.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('6', '27', '2018-12-15', 'Bedana', '1', 'Cheque', '', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '30.00', '30.00', '', '', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_purchase_return
+#
+
+DROP TABLE IF EXISTS `mp_purchase_return`;
+
+CREATE TABLE `mp_purchase_return` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `billing_address` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_purchase_return` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('1', '25', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '16.00', '16.00', '', '', 'default.jpg');
+INSERT INTO `mp_purchase_return` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('2', '28', '2018-12-15', 'Bedana', '1', 'Cheque', '', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '150.00', '150.00', '', '', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_refund
+#
+
+DROP TABLE IF EXISTS `mp_refund`;
+
+CREATE TABLE `mp_refund` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `billing` varchar(255) NOT NULL,
+  `receipt_date` date NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `transaction_id` (`transaction_id`),
+  CONSTRAINT `refund_trans_fk` FOREIGN KEY (`transaction_id`) REFERENCES `mp_generalentry` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_refund` (`id`, `transaction_id`, `payee_id`, `billing`, `receipt_date`, `method`, `message`, `memo`, `ref_no`, `total_bill`, `total_paid`, `user`, `attachment`) VALUES ('1', '22', '1', '', '2018-12-15', 'Cheque', '', '', '', '50.00', '50.00', 'Bedana', 'default.jpg');
+INSERT INTO `mp_refund` (`id`, `transaction_id`, `payee_id`, `billing`, `receipt_date`, `method`, `message`, `memo`, `ref_no`, `total_bill`, `total_paid`, `user`, `attachment`) VALUES ('2', '54', '1', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '2018-12-15', 'Cash', 'Message displayed on invoice :', 'Here does memo', 'REF-125', '65.00', '65.00', 'Bedana', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_refund_sales
+#
+
+DROP TABLE IF EXISTS `mp_refund_sales`;
+
+CREATE TABLE `mp_refund_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `refund_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`refund_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_refund_sales` (`id`, `refund_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('2', '1', '10', 'descrition', '1', '50.00', '0.00');
+INSERT INTO `mp_refund_sales` (`id`, `refund_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('6', '2', '3', 'here  goes description of payment voucher ', '1', '65.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sales
+#
+
+DROP TABLE IF EXISTS `mp_sales`;
+
+CREATE TABLE `mp_sales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`invoice_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `sale_invoice_id` FOREIGN KEY (`invoice_id`) REFERENCES `mp_invoices` (`id`),
+  CONSTRAINT `sale_product_id` FOREIGN KEY (`product_id`) REFERENCES `mp_product` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sales` (`id`, `invoice_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('1', '1', '11', 'Havoc Perfume 100ml', '5', '300.00', '0.00');
+INSERT INTO `mp_sales` (`id`, `invoice_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('2', '2', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sales` (`id`, `invoice_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('3', '3', '11', 'Havoc Perfume 100ml', '1', '200.00', '0.00');
+INSERT INTO `mp_sales` (`id`, `invoice_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('5', '4', '2', 'here  goes description of payment voucher ', '2', '50.00', '0.00');
+INSERT INTO `mp_sales` (`id`, `invoice_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('6', '5', '10', 'descrition', '1', '12.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sales_receipt
+#
+
+DROP TABLE IF EXISTS `mp_sales_receipt`;
+
+CREATE TABLE `mp_sales_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `transaction_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `payee_id` int(11) NOT NULL,
+  `method` varchar(255) NOT NULL,
+  `ref_no` varchar(255) NOT NULL,
+  `billing_address` varchar(255) NOT NULL,
+  `total_bill` decimal(11,2) NOT NULL,
+  `total_paid` decimal(11,2) NOT NULL,
+  `invoicemessage` varchar(255) NOT NULL,
+  `memo` varchar(255) NOT NULL,
+  `attachment` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('1', '4', '2018-12-04', 'Bedana', '6', 'Cash', '', '', '2000.00', '1000.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('2', '5', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '200.00', '200.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('3', '6', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('4', '7', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '200.00', '200.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('5', '8', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('6', '9', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('7', '12', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('8', '13', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '45.45', '45.45', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('9', '14', '2018-12-14', 'Bedana', '1', 'Cash', '', '', '200.00', '200.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('10', '18', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('11', '19', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '50.00', '50.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('12', '26', '2018-12-15', 'Bedana', '1', 'Cheque', '', '', '12.00', '12.00', '', '', 'default.jpg');
+INSERT INTO `mp_sales_receipt` (`id`, `transaction_id`, `date`, `user`, `payee_id`, `method`, `ref_no`, `billing_address`, `total_bill`, `total_paid`, `invoicemessage`, `memo`, `attachment`) VALUES ('13', '53', '2018-12-15', 'Bedana', '1', 'Cash', '', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '45.90', '45.90', '', '', 'default.jpg');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sub_expense
+#
+
+DROP TABLE IF EXISTS `mp_sub_expense`;
+
+CREATE TABLE `mp_sub_expense` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `expense_id` int(11) NOT NULL,
+  `head_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `head_id` (`head_id`),
+  KEY `expense_id` (`expense_id`),
+  CONSTRAINT `sub_expense_fk` FOREIGN KEY (`expense_id`) REFERENCES `mp_expense` (`id`),
+  CONSTRAINT `sub_head_id` FOREIGN KEY (`head_id`) REFERENCES `mp_head` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('2', '1', '15', '', '50.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('3', '2', '22', '', '6.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('6', '4', '13', '', '12.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('8', '3', '22', '1 year packages', '50.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('9', '5', '22', 'here  goes description of payment voucher ', '12.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('10', '6', '22', '', '5.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('12', '7', '22', '', '5.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('14', '8', '22', '1 year packages', '2.00');
+INSERT INTO `mp_sub_expense` (`id`, `expense_id`, `head_id`, `description`, `price`) VALUES ('15', '9', '14', '', '10.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sub_purchase
+#
+
+DROP TABLE IF EXISTS `mp_sub_purchase`;
+
+CREATE TABLE `mp_sub_purchase` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sales_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`sales_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('1', '1', '11', 'Havoc Perfume 100ml', '10', '100.00', '0.00');
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('2', '2', '11', 'Havoc Perfume 100ml', '15', '100.00', '0.00');
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('3', '3', '10', 'descrition', '1', '8.00', '0.00');
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('4', '4', '10', 'descrition', '1', '8.00', '0.00');
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('6', '5', '10', 'descrition', '2', '8.00', '0.00');
+INSERT INTO `mp_sub_purchase` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('8', '6', '10', 'descrition', '1', '30.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sub_purchase_return
+#
+
+DROP TABLE IF EXISTS `mp_sub_purchase_return`;
+
+CREATE TABLE `mp_sub_purchase_return` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sales_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`sales_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sub_purchase_return` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('1', '1', '10', 'descrition', '2', '8.00', '0.00');
+INSERT INTO `mp_sub_purchase_return` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('4', '2', '10', 'descrition', '5', '30.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_sub_receipt
+#
+
+DROP TABLE IF EXISTS `mp_sub_receipt`;
+
+CREATE TABLE `mp_sub_receipt` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sales_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `price` decimal(11,2) NOT NULL,
+  `tax` decimal(11,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invoice_id` (`sales_id`),
+  KEY `product_id` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('2', '2', '11', 'Havoc Perfume 100ml', '1', '200.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('3', '3', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('4', '4', '11', 'Havoc Perfume 100ml', '1', '200.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('5', '5', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('6', '6', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('7', '7', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('8', '8', '5', 'descrition', '1', '45.00', '0.45');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('9', '9', '11', 'Havoc Perfume 100ml', '1', '200.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('10', '10', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('11', '11', '2', 'here  goes description of payment voucher ', '1', '50.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('12', '12', '10', 'descrition', '1', '12.00', '0.00');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('14', '13', '1', 'descrition', '1', '45.00', '0.90');
+INSERT INTO `mp_sub_receipt` (`id`, `sales_id`, `product_id`, `description`, `qty`, `price`, `tax`) VALUES ('15', '1', '11', 'Havoc Perfume 100ml', '5', '400.00', '0.00');
+
+
+#
+# TABLE STRUCTURE FOR: mp_users
+#
+
+DROP TABLE IF EXISTS `mp_users`;
+
+CREATE TABLE `mp_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_address` varchar(100) NOT NULL,
+  `user_contact_1` varchar(50) NOT NULL,
+  `user_contact_2` varchar(50) NOT NULL,
+  `cus_picture` varchar(255) NOT NULL,
+  `status` int(1) NOT NULL,
+  `user_description` varchar(100) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_date` date NOT NULL,
+  `agentname` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_name` (`user_name`),
+  KEY `user_name_2` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+
+INSERT INTO `mp_users` (`id`, `user_name`, `user_email`, `user_address`, `user_contact_1`, `user_contact_2`, `cus_picture`, `status`, `user_description`, `user_password`, `user_date`, `agentname`) VALUES ('35', 'Bedana', 'bedana@gigabyteltd.net', 'Gulistan-e-Jauher Block 4A Office NO 570', '03472394224', '', '0efe416cec1bc20f5c7512ffbf192f75.png', '0', 'here goes description', '8cb2237d0679ca88db6464eac60da96345513964', '2018-04-07', 'Bedana');
+INSERT INTO `mp_users` (`id`, `user_name`, `user_email`, `user_address`, `user_contact_1`, `user_contact_2`, `cus_picture`, `status`, `user_description`, `user_password`, `user_date`, `agentname`) VALUES ('36', 'Bedana', 'bedana@spantiklab.com', 'Gulistan-e-Jauher Block 4A HOUSE NO 570', '', '', '9a74404c970ffbefc3de81018fdcb47b.png', '0', '', '8cb2237d0679ca88db6464eac60da96345513964', '2018-12-15', 'Bedana');
+
+
+SET foreign_key_checks = 1;
